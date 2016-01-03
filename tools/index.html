@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>BuildingSync®</title>
+    <title>Tools – BuildingSync®</title>
     <meta name="description" content="BuildingSync® - Standardizing Energy Audit Data Collection." />
 
     <meta name="HandheldFriendly" content="True" />
@@ -42,7 +42,7 @@
 
 
 </head>
-<body class="home-template nav-closed">
+<body class="page-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title">Menu</h3>
@@ -50,7 +50,7 @@
         <span class="hidden">Close</span>
     </a>
     <ul>
-        <li class="nav-home  nav-current" role="presentation"><a href="/">Home</a></li>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
         <li class="nav-about " role="presentation"><a href="/about/">About</a>
             <ul>
                 <li class="nav-collaborators "><a href="/about/collaborators/">Collaborators</a></li>
@@ -60,7 +60,7 @@
         <li class="nav-download" role="presentation"><a href="https://github.com/BuildingSync/schema/releases">Download</a></li>
         <li class="nav-docs " role="presentation"><a href="/docs/">Docs</a></li>
         <li class="nav-faq " role="presentation"><a href="/faq/">FAQ</a></li>
-        <li class="nav-tools " role="presentation"><a href="/tools/">Tools</a></li>
+        <li class="nav-tools  nav-current" role="presentation"><a href="/tools/">Tools</a></li>
     </ul>
 </div>
 <span class="nav-cover"></span>
@@ -69,36 +69,54 @@
 
         <!-- [[! Everything else gets inserted here ]] -->
         <!-- < default -->
-<!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
 
-<!-- The big featured header  -->
-<header class="main-header "
-        style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/images/cover1.jpg) ">
+<!-- This is a page template. A page outputs content just like any other post, and has all the same -->
+    <!-- attributes by default, but you can also customise it to behave differently if you prefer.  -->
+
+<!-- Everything inside the #post tags pulls data from the page -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/images/cover1.jpg)">
     <nav class="main-nav overlay clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
         
             <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+            
         
     </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">BuildingSync<sup>&reg;</sup></h1>
-            <h2 class="page-description">Standardizing Energy Audit Data Collection.</h2>
-        </div>
-    </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
-<!-- The main content area on the homepage -->
-<main id="content" class="content" role="main">
+<main class="content" role="main">
     <article class="post">
-        
-        <p>BuildingSync<sup>&reg;</sup> is a common schema for energy audit data that can be utilized by different software and databases involved in the energy audit process. It allows data to be more easily aggregated, compared, and exchanged between different databases and software tools. This streamlines the energy audit process, improving the value of the data and facilitating achievement of greater energy efficiency.</p>
+        <!-- Everything inside the #post tags pulls data from the post -->
 
-<p>The schema was developed by a <a href="http://www.nrel.gov/">National Renewable Energy Laboratory (NREL)</a> led working group. Working group participants included industry partners [hyperlink], national laboratories [hyperlink], and industry organizations [hyperlink].</p>
+        <header class="post-header">
+            <h1 class="post-title">Tools</h1>
+        </header>
+
+        <section class="post-content">
+            <p>The following tools will help you adopt the Building Sync schema.</p>
+
+<!--
+#### Mapping
+Click here [hyperlink] to download the mapping tool, which will show how to map your code to the Building Sync schema [is that correct?].
+-->
+
+<h4>Translators</h4>
+BuildingSync XML <-> JSON Translator (schema v2.0-legacy)
+<iframe id="translator" src="translate.html"></iframe>
+
+<!--
+#### Validator
+Click here [hyperlink] to download the validator tool, which will determine whether your software supports the Building Sync schema.
+-->
+
+        </section>
 
     </article>
+
 </main>
+<!-- /post -->
 
 
         <footer class="site-footer clearfix">

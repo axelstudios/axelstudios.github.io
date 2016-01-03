@@ -602,7 +602,7 @@ body.nav-opened .nav {
     top: 0;
     width: 20px;
     height: 1px;
-    background: rgb(150,150,150);
+    background: #969696;
     top: 15px;
     -webkit-transition: background 0.15s ease;
     transition: background 0.15s ease;
@@ -622,13 +622,21 @@ body.nav-opened .nav {
 
 .nav-close:hover:before,
 .nav-close:hover:after {
-    background: rgb(255,255,255);
+    background: #FFF;
 }
 
 .nav ul {
     padding: 90px 9% 5%;
     list-style: none;
     counter-reset: item;
+}
+
+.nav ul ul {
+    padding: 0 0 0 9%;
+}
+
+.nav ul ul li:before {
+    content: counters(item, '.', lower-roman);
 }
 
 .nav li:before {
@@ -665,7 +673,7 @@ body.nav-opened .nav {
 .nav .nav-current:before {
     color: #fff;
 }
-.nav .nav-current a:after {
+.nav .nav-current > a:after {
     content: " ";
     border-bottom: rgba(255,255,255,0.5) 1px solid;
     width: 100%;
@@ -677,38 +685,11 @@ body.nav-opened .nav {
     color: #B8B8B8;
 }
 
-.nav li.nav-current a,
+.nav li.nav-current > a,
 .nav a:hover,
 .nav a:active,
 .nav a:focus {
     color: #fff;
-}
-
-.subscribe-button {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    right: 30px;
-    height: 38px;
-    padding: 0 20px;
-    color: #111 !important; /* Overides `.nav a:link, .nav a:visited` colour */
-    text-align: center;
-    font-size: 12px;
-    font-family: "Open Sans", sans-serif;
-    text-transform: uppercase;
-    text-decoration: none;
-    line-height: 35px;
-    border-radius: 3px;
-    background: #fff;
-    transition: all ease 0.3s;
-}
-.subscribe-button:before {
-    font-size: 9px;
-    margin-right: 6px;
 }
 
 
@@ -776,7 +757,7 @@ body.nav-opened .nav {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
-    height: 38px;
+    height: 42px;
     padding: 1px 0 5px 0;
     width: auto;
 }
@@ -867,11 +848,16 @@ body.nav-opened .nav {
 /* The details of your blog. Defined in ghost/settings/ */
 .page-title {
     margin: 10px 0 10px 0;
-    font-size: 5rem;
+    font-size: 7rem;
     letter-spacing: -1px;
     font-weight: 700;
-    font-family: "Open Sans", sans-serif;
+    font-family: "PT Sans Narrow", sans-serif;
     color: #fff;
+}
+
+.page-title > sup {
+    font-size: 70%;
+    font-weight: normal;
 }
 
 .page-description {
@@ -879,7 +865,7 @@ body.nav-opened .nav {
     font-size: 2rem;
     line-height: 1.5em;
     font-weight: 400;
-    font-family: "Merriweather", serif;
+    font-family: "Open Sans", serif;
     letter-spacing: 0.01rem;
     color: rgba(255,255,255,0.8);
 }
@@ -916,7 +902,7 @@ body.nav-opened .nav {
 .post {
     position: relative;
     width: 80%;
-    max-width: 710px;
+    max-width: 1024px;
     margin: 4rem auto;
     padding-bottom: 4rem;
     /*border-bottom: #EBF2F6 1px solid;*/
@@ -1035,6 +1021,13 @@ body:not(.post-template) .post-title {
     display: block;
     font-size: 1.4rem;
     line-height: 1.5em;
+}
+
+#translator {
+    border: 0 none;
+    height: 720px;
+    margin: 0;
+    width: 100%;
 }
 
 
@@ -1202,8 +1195,7 @@ body:not(.post-template) .post-title {
    ========================================================================== */
 
 .post-head.main-header {
-    height: 65vh;
-    min-height: 180px;
+    height: 110px;
 }
 
 .no-cover.post-head.main-header {
@@ -1587,13 +1579,6 @@ body:not(.post-template) .post-title {
     border-bottom: #bbc7cc 1px solid;
 }
 
-.poweredby {
-    display: block;
-    width: 45%;
-    float: right;
-    text-align: right;
-}
-
 .copyright {
     display: block;
     width: 45%;
@@ -1829,10 +1814,7 @@ body:not(.post-template) .post-title {
 
     .post {
         width: auto;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        margin-left: 16px;
-        margin-right: 16px;
+        margin: 2rem 16px;
         padding-bottom: 2rem;
         line-height: 1.65em;
     }
